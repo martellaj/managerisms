@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
-  
+
   <style>
       body { padding-top:50px; }
   </style>
@@ -28,13 +28,14 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
+  <script src="app.routes.js"></script> 
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 </head>
-<body class="container">
+<body class="container" ng-app="myApp">
     <!-- HEADER AND NAVBAR -->
     <header>
       <nav class="navbar navbar-default">
@@ -42,8 +43,8 @@
           <a class="navbar-brand tk-museo-slab" href="/">Angular App</a>
         </div>
         <ul class="nav navbar-nav navbar-right tk-museo-slab">
-          <li><a href="#/view1"><i class="fa fa-bar-chart-o"></i> View 1</a></li>
-          <li><a href="#/view2"><i class="fa fa-shield"></i> View 2</a></li>
+          <li><a href="/view1"><i class="fa fa-bar-chart-o"></i> View 1</a></li>
+          <li><a href="/view2"><i class="fa fa-shield"></i> View 2</a></li>
         </ul>
       </nav>
     </header>
