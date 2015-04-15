@@ -1,8 +1,8 @@
 # angular-node-seed
 
-This project is an application skeleton for a typical [Angular](http://angularjs.org/) web app with a Node.js back-end.
+This project is an application skeleton for a typical [Angular](http://angularjs.org/) web app with a Node.js backend.
 
-The seed contains a sample Angular application configured with a Node.js back-end and is preconfigured to install the Angular framework. 
+The seed contains a sample Angular application configured with a Node.js backend and is preconfigured to install the Angular framework. 
 
 It can be used to quickly bootstrap an Angular app with Bootstrap.
 
