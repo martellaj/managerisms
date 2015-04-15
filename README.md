@@ -19,7 +19,13 @@ Before you forget, you should then change the remote for the repository. After y
 
 ## Run the application
 
-Run the app by starting the server.
+First, download all dependencies using npm. All bower components will also be installed as well.
+
+```
+npm install
+```
+
+Then, run the app by starting the server.
 
 ```
 nodemon server.js
