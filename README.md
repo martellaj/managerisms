@@ -4,8 +4,7 @@ This project is an application skeleton for a typical [Angular](http://angularjs
 
 The seed contains a sample Angular application configured with a Node.js backend and is preconfigured to install the Angular framework. 
 
-
-
+This seed adheres to [John Papa's style guidelines](https://github.com/johnpapa/angular-styleguide).
 
 ## Getting started
 
