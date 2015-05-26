@@ -4,7 +4,7 @@ This project is an application skeleton for a typical [Angular](http://angularjs
 
 The seed contains a sample Angular application configured with a Node.js backend and is preconfigured to install the Angular framework. 
 
-It can be used to quickly bootstrap an Angular app with Bootstrap.
+
 
 
 ## Getting started
@@ -19,7 +19,7 @@ Before you forget, you should then change the remote for the repository. After y
 
 ## Run the application
 
-First, download all dependencies using npm. All bower components will also be installed as well.
+First, download all dependencies using npm. All bower components will be installed as well.
 
 ```
 npm install
@@ -28,7 +28,7 @@ npm install
 Then, run the app by starting the server.
 
 ```
-nodemon server.js
+node server.js
 ```
 
 Now browse to the app at `http://localhost:8080/`.
