@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="seedApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Joe's Angular Seed</title>
+  <base href="/">
+
+  <!-- Third party dependencies. -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+    
+  <!-- App code. -->
+  <script src="scripts/app.js"></script>
+  <script src="controllers/View1Controller.js"></script>
+  <script src="controllers/View2Controller.js"></script>
+</head>
+<body class="container">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Joe's Angular Seed</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/view1">View 1</a></li>
+          <li><a href="/view2">View 2</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div ng-view></div>
+    </main>
+  </body>
+</html>
