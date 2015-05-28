@@ -1,8 +1,9 @@
 (function() {
-  angular.module('seedApp', [
-    'ngRoute'
-  ])
-  .config(config); 
+  angular
+    .module('seedApp', [
+      'ngRoute'
+    ])
+    .config(config); 
   
   function config($routeProvider, $locationProvider) {
     // Configure the routes. 

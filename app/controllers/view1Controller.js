@@ -1,6 +1,7 @@
 (function() {
-	angular.module('seedApp')
-	.controller('View1Controller', View1Controller);
+	angular
+		.module('seedApp')
+		.controller('View1Controller', View1Controller);
 	
 	// Inject dependencies to protect app from minification.
 	View1Controller.$inject = ['$log'];
