@@ -1,7 +1,8 @@
 (function() {
   angular
     .module('seedApp', [
-      'ngRoute'
+      'ngRoute',
+      'ui.bootstrap'
     ])
     .config(config); 
   
