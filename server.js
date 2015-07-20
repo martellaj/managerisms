@@ -13,8 +13,8 @@ var port = process.env.PORT || 8080;
 // Configure morgan module to log all requests.
 app.use(morgan('dev')); 
 
-// Set the front-end folder to serve public assets.
-app.use(express.static(__dirname + '/app'));
+// Set the public folder to serve public assets.
+app.use(express.static(__dirname + '/public'));
 
 // Configure app to handle CORS requests.
 app.use(function (req, res, next) {
@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
 
 // Set up our one route to the index.html file.
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname + '/app/index.html'));
+	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // Start the app.  
