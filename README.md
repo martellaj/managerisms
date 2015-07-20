@@ -1,12 +1,10 @@
-# angular-node-seed
+# martellaj's Angular seed
 
 This project is an application skeleton for a typical [Angular](http://angularjs.org/) web app with a Node.js backend.
 
-The seed contains a sample Angular application configured with a Node.js backend and is preconfigured to install the Angular framework. 
-
 This seed adheres to [John Papa's style guidelines](https://github.com/johnpapa/angular-styleguide).
 
-## Getting started
+## How to use
 
 To use the seed, simply clone the repository (giving your repo a new name).
 
@@ -16,9 +14,9 @@ git clone https://github.com/martellaj/angular-seed.git new-project-name
 
 Before you forget, you should then change the remote for the repository. After you create a new repo, open up **.git/config** and replace *url* with your repository's URL. 
 
-## Run the application
+## Run the app
 
-First, download all dependencies using npm. All bower components will be installed as well.
+First, install all dependencies using npm.
 
 ```
 npm install
