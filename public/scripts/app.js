@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('seedApp', [
+    .module('app', [
       'ngRoute',
       'ui.bootstrap'
     ])
@@ -9,18 +9,13 @@
   function config($routeProvider, $locationProvider) {
     // Configure the routes. 
   	$routeProvider
-  		.when('/view1', {
-  			templateUrl: 'views/view1.html',
-  			controller: 'View1Controller',
-  			controllerAs: 'view1'
+  		.when('/', {
+  			templateUrl: 'views/main.html',
+  			controller: 'MainController',
+  			controllerAs: 'main'
   		}) 
-  		.when('/view2', {
-  			templateUrl: 'views/view2.html',
-  			controller: 'View2Controller',
-  			controllerAs: 'view2'
-  		})  
   		.otherwise({ 
-        redirectTo: '/view1' 
+        redirectTo: '/' 
       });
   
   	// Make the URLs pretty.

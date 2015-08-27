@@ -1,14 +1,12 @@
 (function () {
 	angular
-		.module('seedApp')
+		.module('app')
 		.controller('NavbarController', NavbarController);
-	
-	// Inject dependencies to protect app from minification.
-	NavbarController.$inject = ['$log'];
-	
+
 	/**
 	 * The NavbarController code.
 	 */
+	NavbarController.$inject = ['$log'];
 	function NavbarController($log) {
 		var vm = this;
 		
@@ -18,16 +16,13 @@
 		/////////////////////////////////////////
 		// End of exposed properties and methods.
 		
-		// Activate controller when it loads.
-		activate();
-		
 		/**
 		 * This function does any initialization work the 
 		 * controller needs.
 		 */
-		function activate() {
-			$log.debug('Activated View2Controller.');
+		(function activate() {
+			$log.debug('Activated NavbarController.');
 			vm.isCollapsed = true;
-		};
+		})();
 	};
 })();

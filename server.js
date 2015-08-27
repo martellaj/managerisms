@@ -1,14 +1,10 @@
-var express   	= require('express');
-var app        	= express();
-var mongoose		= require('mongoose'); 
-var morgan 			= require('morgan');
-var path 				= require('path'); 
+var express = require('express');
+var app = express();
+var morgan = require('morgan');
+var path = require('path'); 
 
 // Initialize variables. 
 var port = process.env.PORT || 8080; 
-
-// Connect to DB.
-// mongoose.connect(dbConnectionString);
 
 // Configure morgan module to log all requests.
 app.use(morgan('dev')); 
@@ -25,12 +21,8 @@ app.use(function (req, res, next) {
 	next();
 });
 
-// Route registration. 
-// var apiRouter = require('./app/routes/apiRouter');
-// app.use('/api', apiRouter); 
-
 // Set up our one route to the index.html file.
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
