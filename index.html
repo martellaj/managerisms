@@ -9,18 +9,32 @@
     <!-- Third party dependencies. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-aria.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css">
+  </body>
     <!-- App code. -->
     <script src="scripts/app.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/navbarController.js"></script>
+    <link rel="stylesheet" href="assets/custom.css">
   </head>
   
-  <body>
+  <body layout="column" ng-controller="NavbarController as nav">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <h1 class="navbar-title">Managerisms</h1>
+        <span flex></span>
+        <md-button class="md-button">What did your manager say?</md-button>
+      </div>
+    </md-toolbar>
+  </body>
+  
+  <!--<body>
     <nav class="navbar navbar-default" ng-controller="NavbarController as nav">
       <div class="navbar-header">
         <div class="container-fluid">
@@ -45,6 +59,6 @@
         <div ng-view></div>
       </main>
     </div>
-  </body>
+  </body>-->
 
 </html>
