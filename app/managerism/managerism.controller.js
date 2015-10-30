@@ -6,12 +6,12 @@
 	/**
 	 * The ManagerismController code.
 	 */
-	ManagerismController.$inject = ['$log', '$firebaseArray'];
-	function ManagerismController($log, $firebaseArray) {
+	ManagerismController.$inject = ['$log', 'managerismFactory'];
+	function ManagerismController($log, managerismFactory) {
 		var vm = this;
 		
-		// Methods
-		vm.addData = addData;
+		// Properties
+		vm.managerism;
 		
 		/////////////////////////////////////////
 		// End of exposed properties and methods.
@@ -22,19 +22,9 @@
 		 */
 		(function activate() {
 			$log.debug('Activated ManagerismController.');
-			
-			var ref = new Firebase('https://managerisms.firebaseio.com');
-			vm.data = $firebaseArray(ref);
-			
-			console.log('vm.data', vm.data);
+			managerismFactory.getManagerism().then(function(managerism) {
+				vm.managerism = managerism;
+			});
 		})(); 
-		
-		function addData() {
-			$log.debug(vm.data);
-			vm.data.$add({
-				'name': 'Joe',
-				'age': 24
-			});	
-		}
 	};
 })();
