@@ -1,13 +1,13 @@
 (function() {
 	angular
-		.module('app')
-		.controller('MainController', MainController);
+		.module('app.managerism')
+		.controller('ManagerismController', ManagerismController);
 	
 	/**
-	 * The MainController code.
+	 * The ManagerismController code.
 	 */
-	MainController.$inject = ['$log', '$firebaseArray'];
-	function MainController($log, $firebaseArray) {
+	ManagerismController.$inject = ['$log', '$firebaseArray'];
+	function ManagerismController($log, $firebaseArray) {
 		var vm = this;
 		
 		// Methods
@@ -21,7 +21,7 @@
 		 * controller needs.
 		 */
 		(function activate() {
-			$log.debug('Activated MainController.');
+			$log.debug('Activated ManagerismController.');
 			
 			var ref = new Firebase('https://managerisms.firebaseio.com');
 			vm.data = $firebaseArray(ref);

@@ -3,7 +3,7 @@
     .module('app', [
       'ngRoute',
       'ngMaterial',
-      'firebase'
+      'app.managerism'
     ])
     .config(config); 
   
@@ -11,9 +11,9 @@
     // Configure the routes. 
   	$routeProvider
   		.when('/', {
-  			templateUrl: 'views/main.html',
-  			controller: 'MainController',
-  			controllerAs: 'main'
+  			templateUrl: 'app/managerism/managerism.html',
+  			controller: 'ManagerismController',
+  			controllerAs: 'managerism'
   		}) 
   		.otherwise({ 
         redirectTo: '/' 
