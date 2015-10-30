@@ -1,0 +1,16 @@
+{
+  "name": "managerisms",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martellaj/managerisms.git"
+  },
+  "author": "Joe Martella",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martellaj/managerisms/issues"
+  },
+  "devDependencies": {
+    "live-server": "^0.8.2"
+  }
+}
