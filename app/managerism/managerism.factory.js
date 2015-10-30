@@ -19,7 +19,7 @@
 		/**
 		 * @name getManagerism
 		 * @desc Gets a random managerism from Firebase.
-		 * @returns {String}
+		 * @returns {Promise} When completed, returns an object with "quote" and "company" properties.
 		 */
 		function getManagerism() {
 			var deferred = $q.defer();
