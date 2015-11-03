@@ -1,0 +1,1 @@
+[![Issue Stats](http://issuestats.com/github/martellaj/managerisms/badge/pr?style=flat)](http://issuestats.com/github/martellaj/managerisms)
