@@ -1,1 +1,3 @@
-[![Issue Stats](http://issuestats.com/github/martellaj/managerisms/badge/pr?style=flat)](http://issuestats.com/github/martellaj/managerisms)
+# Managerisms
+
+[![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
