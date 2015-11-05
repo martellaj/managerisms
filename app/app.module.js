@@ -5,6 +5,7 @@
     .module('app', [
       'ngRoute',
       'ngMaterial',
+      'ngMdIcons',
       'app.managerism'
     ])
     .config(config);

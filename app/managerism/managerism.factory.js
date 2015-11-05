@@ -10,13 +10,12 @@
   managerismFactory.$inject = ['$log', '$firebaseArray', '$q'];
   function managerismFactory ($log, $firebaseArray, $q) {
     var service = {
-      getManagerism: getManagerism,
-      getBackground: getBackground
+      getManagerism: getManagerism
     };
 
     return service;
 
-    // ///////////////////////////////////////
+    /** ********************************* **/
     // End of exposed properties and methods.
 
     /**
@@ -36,22 +35,6 @@
         var managerism = managerismsCollection[random];
 
         deferred.resolve(managerism);
-      });
-
-      return deferred.promise;
-    }
-
-    function getBackground () {
-      var deferred = $q.defer();
-
-      var backgroundsCollectionRef = new Firebase('https://managerisms.firebaseio.com/backgrounds');
-      var backgroundsCollection = $firebaseArray(backgroundsCollectionRef);
-
-      backgroundsCollection.$loaded().then(function () {
-        var random = Math.floor(Math.random() * backgroundsCollection.length);
-        var background = backgroundsCollection[random];
-
-        deferred.resolve(background);
       });
 
       return deferred.promise;
