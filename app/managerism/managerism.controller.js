@@ -14,6 +14,9 @@
 
     // Properties
     vm.managerism;
+    
+    // Methods
+    vm.getManagerism = getManagerism;
 
     /** ********************************* **/
     // End of exposed properties and methods.
@@ -24,11 +27,18 @@
      */
     (function activate () {
       $log.debug('Activated ManagerismController.');
-
-      // Get managerism.
+      
+      getManagerism();
+    })();
+    
+    /**
+     * @name getManagerism
+     * @desc Gets a managerism from Firebase via the factory.
+     */
+    function getManagerism () {
       managerismFactory.getManagerism().then(function (managerism) {
         vm.managerism = managerism;
       });
-    })();
+    }
   }
 })();
