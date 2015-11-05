@@ -1,5 +1,7 @@
-(function() {
-	'use strict';
+/* global angular */
 
-	angular.module('app.managerism', ['firebase']);
+(function () {
+  'use strict';
+
+  angular.module('app.managerism', ['firebase']);
 })();
