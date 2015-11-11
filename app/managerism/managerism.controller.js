@@ -14,7 +14,7 @@
 
     // Properties
     vm.managerism;
-    
+
     // Methods
     vm.getManagerism = getManagerism;
 
@@ -27,10 +27,10 @@
      */
     (function activate () {
       $log.debug('Activated ManagerismController.');
-      
+
       getManagerism();
     })();
-    
+
     /**
      * @name getManagerism
      * @desc Gets a managerism from Firebase via the factory.
