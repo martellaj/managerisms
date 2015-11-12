@@ -8,6 +8,9 @@ var app = express();
 app.use(morgan('dev')); 
 app.use(express.static(__dirname + '/..'));
 
+// Register API routes.
+app.use('/api', require('./apiRoutes'));
+
 // Set up our one route to the index.html file.
 app.get('*', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../client/index.html'));
@@ -16,4 +19,3 @@ app.get('*', function (req, res) {
 // Start the app.  
 app.listen(port);
 console.log('Listening on port ' + port + '...');
-console.log(path.join(__dirname + '/../client/index.html'));
