@@ -14,7 +14,7 @@
     // Configure the routes.
     $routeProvider
       .when('/', {
-        templateUrl: 'app/managerism/managerism.html',
+        templateUrl: 'client/managerism/managerism.html',
         controller: 'ManagerismController',
         controllerAs: 'managerism'
       })
