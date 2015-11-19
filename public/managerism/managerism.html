@@ -3,12 +3,16 @@
 	<h2 class="md-headline"><em>- A manager from {{managerism.managerism.company}}</em></h2> 
 	
 	<div class="managerism-actions">
-		<button class="md-fab md-button" md-ink-ripple ng-click="managerism.getManagerism()">
+		<button class="md-fab md-button" md-ink-ripple ng-click="managerism.getManagerism();">
 			<ng-md-icon icon="refresh"></ng-md-icon>
 		</button><!-- refresh button -->
 		
-		<button class="md-fab md-button" md-ink-ripple>
+		<button class="md-fab md-button" md-ink-ripple ng-click="managerism.tweet();" ng-show="managerism.isSignedIn">
 			<ng-md-icon icon="twitter"></ng-md-icon>
 		</button><!-- tweet button -->
 	</div>
+  
+  <div>
+    <h2 class="message" ng-show="managerism.messageShow">{{ managerism.messageText }}</h2>
+  </div>
 </div>

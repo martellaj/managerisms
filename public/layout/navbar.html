@@ -3,5 +3,7 @@
 		<h1 class="navbar-title">Managerisms</h1>
 		<span flex></span>
 		<md-button class="md-button">What did your manager say?</md-button>
+    <md-button class="md-button" ng-click="nav.signIn();" ng-hide="nav.isSignedIn">Sign in with Twitter</md-button>
+    <md-button class="md-button" ng-click="nav.signOut();" ng-show="nav.isSignedIn">Sign out</md-button>    
 	</div>
 </md-toolbar>

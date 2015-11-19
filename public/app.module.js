@@ -1,12 +1,11 @@
-/* global angular */
-
 (function () {
   angular
     .module('app', [
       'ngRoute',
       'ngMaterial',
       'ngMdIcons',
-      'app.managerism'
+      'app.managerism',
+      'app.auth'
     ])
     .config(config);
 
@@ -14,7 +13,7 @@
     // Configure the routes.
     $routeProvider
       .when('/', {
-        templateUrl: 'client/managerism/managerism.html',
+        templateUrl: 'managerism/managerism.html',
         controller: 'ManagerismController',
         controllerAs: 'managerism'
       })

@@ -1,0 +1,20 @@
+.navbar-title {
+	margin-left: 10px;
+}
+
+.managerism {
+	margin-top: 150px;
+}
+
+.managerism-actions {
+	margin-top: 40px;
+}
+
+.message {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.message.ng-hide {
+  opacity: 0;
+}
