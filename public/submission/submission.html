@@ -1,5 +1,23 @@
-<div layout="column" layout-align="center center">
-  <div flex>
-    <h1 class="md-display-3 quote">ay girl</h1>
+<div layout="column" class="submission">
+  <div layout="column">
+    <form name="submissionForm" ng-submit="submission.submit();">
+      <md-input-container class="md-block">
+        <label>Quote</label>
+        <input required name="quote" ng-model="submission.quote">
+        <div ng-messages="submissionForm.quote.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Company</label>
+        <input required name="company" ng-model="submission.company">
+        <div ng-messages="submissionForm.company.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <div layout="row" layout-align="center center">
+        <md-button type="submit" class="md-button md-raised md-primary submit-button">Submit</md-button>        
+      </div>
+    </form>
   </div>
 </div>

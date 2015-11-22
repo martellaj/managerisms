@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('app.submission', []);
+  angular.module('app.submission', ['ngMessages']);
 })();

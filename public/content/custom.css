@@ -3,7 +3,7 @@
 }
 
 .managerism {
-	margin-top: 150px;
+	margin-top: 15%;
 }
 
 .managerism-actions {
@@ -26,4 +26,14 @@
 
 .text-center {
   text-align: center;
+}
+
+.submission {
+  margin-top: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.submit-button {
+  margin-top: 2%;
 }
