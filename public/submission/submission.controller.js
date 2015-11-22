@@ -12,6 +12,7 @@
     // Properties
     vm.quote;
     vm.company;
+    vm.isSubmitting = false;
 
     // Methods
     vm.submit = submit;
@@ -23,8 +24,11 @@
       $log.debug('Activated SubmissionController.');
     })();
 
-    function submit () {
+    function submit (form) {
       $log.debug('Form submit handler called.');
+
+      // Disable the form while submitting.
+      vm.isSubmitting = true;
 
       var req = {
         method: 'POST',
@@ -35,16 +39,33 @@
         }
       };
 
-      // $http(req)
-      //   .then(function (res) {
-      //     displayMessage('Just shouted this managerism into the void.');
-      //   }, function (err) {
-      //     if (err === 400) {
-      //       displayMessage('This managerism is too long to tweet.');
-      //     } else {
-      //       displayMessage('Something went wrong.');
-      //     }
-      //   });
+      $http(req)
+        .then(function (res) {
+          $log.debug('Submitted managerism successfully.');
+          reset(form);
+        }, function (err) {
+          $log.error(err);
+          reset(form);
+        });
+    }
+
+    /**
+     * @name reset
+     * @desc Resets the form and models the form uses.
+     * @param form The HTML form.
+     */
+    function reset (form) {
+      // Reset values.
+      vm.quote = '';
+      vm.company = '';
+
+      // Reset form.
+      form.$setPristine();
+      vm.isSubmitting = false;
+
+      // ngMessages clearing errors workaround (https://github.com/angular/material/issues/1903).
+      form.quote.$touched = false;
+      form.company.$touched = false;
     }
   }
 })();

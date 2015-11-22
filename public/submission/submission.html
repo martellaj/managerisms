@@ -1,6 +1,6 @@
 <div layout="column" class="submission">
   <div layout="column">
-    <form name="submissionForm" ng-submit="submission.submit();">
+    <form name="submissionForm" ng-submit="submission.submit(submissionForm);">
       <md-input-container class="md-block">
         <label>Quote</label>
         <input required name="quote" ng-model="submission.quote">
@@ -16,7 +16,7 @@
         </div>
       </md-input-container>
       <div layout="row" layout-align="center center">
-        <md-button type="submit" class="md-button md-raised md-primary submit-button">Submit</md-button>        
+        <md-button type="submit" class="md-button md-raised md-primary submit-button" ng-disabled="submission.isSubmitting">Submit</md-button>        
       </div>
     </form>
   </div>
