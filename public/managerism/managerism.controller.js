@@ -11,7 +11,10 @@
     var vm = this;
 
     // Properties
-    vm.managerism;
+    vm.managerism = {
+      quote: 'Make friends first, make sales second, make love third. In no particular order.',
+      company: 'Dunder Mifflin'
+    };
     vm.isSignedIn = false;
     vm.messageText = 'Placeholder message goes here.';
     vm.messageShow = false;
@@ -34,8 +37,6 @@
         .then(function (res) {
           vm.isSignedIn = res;
         });
-
-      getManagerism();
     })();
 
     /**
