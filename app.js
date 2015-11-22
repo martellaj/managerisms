@@ -6,16 +6,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
-
-// Require all the routes.
-var auth = require('./routes/auth')(passport);
-var twitter = require('./routes/twitter');
+var mongoose = require('mongoose');
 
 var app = express();
+
+// Configure the database.
+var mongooseConfig = require('./config/mongo.config');
+mongoose.connect(mongooseConfig.connectionString);
 
 // Set the public folder to serve public assets.
 app.use(express.static(__dirname));
 
+// Allow CORS requests to be made to the server.
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
@@ -34,9 +36,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'keyboard cat' }));
 
 // Configure and initialize Passport.
-require('./config/passport')(passport);
+require('./config/passport.config')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Require all the routes.
+var auth = require('./routes/auth')(passport);
+var twitter = require('./routes/twitter');
 
 // Register all the routes.
 app.use('/auth', auth);

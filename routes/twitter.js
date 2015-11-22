@@ -1,6 +1,6 @@
 var express = require('express');
 var Twitter = require('twitter');
-var twitterApp = require('../config/twitterAppInfo');
+var twitterConfig = require('../config/twitter.config');
 var router = express.Router();
 
 // POST /twitter/tweet
@@ -12,8 +12,8 @@ router.post('/tweet', function (req, res, next) {
     // Use the Twitter library to send the request. Build the
     // client object here.
     var client = new Twitter({
-      consumer_key: twitterApp.clientID,
-      consumer_secret: twitterApp.clientSecret,
+      consumer_key: twitterConfig.clientID,
+      consumer_secret: twitterConfig.clientSecret,
       access_token_key: req.user.token,
       access_token_secret: req.user.tokenSecret
     });

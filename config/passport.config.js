@@ -1,5 +1,5 @@
 var Strategy = require('passport-twitter').Strategy;
-var twitterApp = require('./twitterAppInfo');
+var twitterConfig = require('./twitter.config');
 
 module.exports = function (passport) {
   // Passport session setup.
@@ -13,9 +13,9 @@ module.exports = function (passport) {
 
   // Configure VSO Passport strategy.
   passport.use(new Strategy({
-    consumerKey: twitterApp.clientID,
-    consumerSecret: twitterApp.clientSecret,
-    callbackURL: twitterApp.callbackURL
+    consumerKey: twitterConfig.clientID,
+    consumerSecret: twitterConfig.clientSecret,
+    callbackURL: twitterConfig.callbackURL
   },
     function (token, tokenSecret, profile, done) {
       // Asynchronous verification, for effect...

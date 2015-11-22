@@ -1,4 +1,5 @@
 etc/
 node_modules/
-config/twitterAppInfo.js
+config/twitter.config.js
+config/mongo.config.js
 .DS_Store
