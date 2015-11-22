@@ -5,7 +5,8 @@
       'ngMaterial',
       'ngMdIcons',
       'app.managerism',
-      'app.auth'
+      'app.auth',
+      'app.submission'
     ])
     .config(config);
 
