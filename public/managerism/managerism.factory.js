@@ -5,8 +5,8 @@
     .module('app.managerism')
     .factory('managerismFactory', managerismFactory);
 
-  managerismFactory.$inject = ['$log', '$firebaseArray', '$q'];
-  function managerismFactory ($log, $firebaseArray, $q) {
+  managerismFactory.$inject = ['$log', '$q', '$http'];
+  function managerismFactory ($log, $q, $http) {
     var service = {
       getManagerism: getManagerism
     };
@@ -18,21 +18,19 @@
 
     /**
      * @name getManagerism
-     * @desc Gets a random managerism from Firebase.
+     * @desc Gets a random managerism from the back.
      * @returns {Promise} When completed, returns an object with "quote" and "company" properties.
      */
     function getManagerism () {
       var deferred = $q.defer();
 
-      var managerismsCollectionRef = new Firebase('https://managerisms.firebaseio.com/managerisms');
-      var managerismsCollection = $firebaseArray(managerismsCollectionRef);
-
-      // Wait for collection to load, and then do work.
-      managerismsCollection.$loaded().then(function () {
-        var random = Math.floor(Math.random() * managerismsCollection.length);
-        var managerism = managerismsCollection[random];
-
-        deferred.resolve(managerism);
+      $http({
+        method: 'GET',
+        url: '/managerism'
+      }).then(function (response) {
+        deferred.resolve(response.data);
+      }, function (error) {
+        deferred.reject(error);
       });
 
       return deferred.promise;

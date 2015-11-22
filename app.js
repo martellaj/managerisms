@@ -43,34 +43,22 @@ app.use(passport.session());
 // Require all the routes.
 var auth = require('./routes/auth')(passport);
 var twitter = require('./routes/twitter');
+var managerism = require('./routes/managerism');
 
 // Register all the routes.
 app.use('/auth', auth);
 app.use('/twitter', twitter);
+app.use('/managerism', managerism);
 
 // All other routes go to frontend.
 app.get('*', function (req, res) {
   res.sendfile('./public/index.html');
 });
 
-// Development error handler (will print stacktrace)
-if (app.get('env') === 'development') {
-  app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
 // Production error handler (no stacktraces leaked to user)
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+  console.log(err.message);
 });
 
 module.exports = app;

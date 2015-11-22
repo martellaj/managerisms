@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('app.managerism', ['firebase']);
+  angular.module('app.managerism', []);
 })();
