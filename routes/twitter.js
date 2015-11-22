@@ -1,6 +1,4 @@
 var express = require('express');
-var request = require('request');
-var Promise = require('promise');
 var Twitter = require('twitter');
 var twitterApp = require('../config/twitterAppInfo');
 var router = express.Router();
