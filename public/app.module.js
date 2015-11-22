@@ -18,6 +18,11 @@
         controller: 'ManagerismController',
         controllerAs: 'managerism'
       })
+      .when('/submission', {
+        templateUrl: 'submission/submission.html',
+        controller: 'SubmissionController',
+        controllerAs: 'submission'
+      })
       .otherwise({
         redirectTo: '/'
       });
