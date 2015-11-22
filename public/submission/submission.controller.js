@@ -12,8 +12,8 @@
     // *********************************** //
     // End of exposed properties and methods.
 
-    (function activate () { 
+    (function activate () {
       $log.debug('Activated SubmissionController.');
-    })(); 
+    })();
   }
 })();
