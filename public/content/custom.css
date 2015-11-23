@@ -1,3 +1,12 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar-title {
 	margin-left: 10px;
 }
@@ -36,4 +45,8 @@
 
 .submit-button {
   margin-top: 2%;
+}
+
+.main-content {
+  height: calc(100vh - 64px);
 }
