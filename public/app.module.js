@@ -10,7 +10,7 @@
     ])
     .config(config);
 
-  function config ($routeProvider, $locationProvider) {
+  function config ($routeProvider, $locationProvider, $mdThemingProvider) {
     // Configure the routes.
     $routeProvider
       .when('/', {
@@ -29,5 +29,10 @@
 
     // Make the URLs pretty.
     $locationProvider.html5Mode(true);
+    
+    // Apply a color theme to the app.
+    $mdThemingProvider.theme('default')
+      .primaryPalette('deep-purple')
+      .accentPalette('green');
   }
 })();

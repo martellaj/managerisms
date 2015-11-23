@@ -12,7 +12,7 @@ a {
 }
 
 .managerism {
-	margin-top: 15%;
+	margin-top: 10%;
 }
 
 .managerism-actions {
@@ -38,7 +38,7 @@ a {
 }
 
 .submission {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 15%;
   margin-right: 15%;
 }
@@ -49,4 +49,8 @@ a {
 
 .main-content {
   height: calc(100vh - 64px);
+}
+
+.twitter-theme {
+  background-color: #55aace;
 }
