@@ -83,7 +83,7 @@
       $mdToast.show(
         $mdToast.simple()
           .content(text)
-          .position('bottom right')
+          .position('top left')
           .hideDelay(3000)
       );
     }
