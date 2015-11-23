@@ -12,6 +12,7 @@
     // Properties
     vm.quote;
     vm.company;
+    vm.emailAddress;
     vm.isSubmitting = false;
 
     // Methods
@@ -35,7 +36,8 @@
         url: '/managerism/submit',
         data: {
           quote: vm.quote,
-          company: vm.company
+          company: vm.company,
+          emailAddress: vm.emailAddress
         }
       };
 
@@ -60,6 +62,7 @@
       // Reset values.
       vm.quote = '';
       vm.company = '';
+      vm.emailAddress = '';
 
       // Reset form.
       form.$setPristine();
@@ -68,6 +71,7 @@
       // ngMessages clearing errors workaround (https://github.com/angular/material/issues/1903).
       form.quote.$touched = false;
       form.company.$touched = false;
+      form.emailAddress.$touched = false;
     }
 
     /**

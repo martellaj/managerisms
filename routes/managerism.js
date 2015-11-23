@@ -18,10 +18,12 @@ router.get('/', function (req, res) {
 router.post('/submit', function (req, res) {
   var quote = req.body.quote;
   var company = req.body.company;
+  var emailAddress = req.body.emailAddress;
 
   var submission = new Submission({
     quote: quote,
-    company: company
+    company: company,
+    emailAddress: emailAddress
   });
 
   submission.save(function (err, submission) {

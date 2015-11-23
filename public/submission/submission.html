@@ -15,6 +15,13 @@
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
+      <md-input-container class="md-block">
+        <label>Email address</label>
+        <input type="email" name="emailAddress" ng-model="submission.emailAddress">
+        <div ng-messages="submissionForm.emailAddress.$error">
+          <div ng-message="email">Please enter a valid email address.</div>
+        </div>
+      </md-input-container>
       <div layout="row" layout-align="center center">
         <md-button type="submit" class="md-button md-raised md-accent submit-button" ng-disabled="submission.isSubmitting">Submit</md-button>  
       </div>
