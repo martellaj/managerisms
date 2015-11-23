@@ -5,8 +5,8 @@
     .module('app.submission')
     .controller('SubmissionController', SubmissionController);
 
-  SubmissionController.$inject = ['$log', '$http'];
-  function SubmissionController ($log, $http) {
+  SubmissionController.$inject = ['$log', '$http', '$mdToast'];
+  function SubmissionController ($log, $http, $mdToast) {
     var vm = this;
 
     // Properties
@@ -43,9 +43,11 @@
         .then(function (res) {
           $log.debug('Submitted managerism successfully.');
           reset(form);
+          displayMessage('Thanks for your submission!');
         }, function (err) {
           $log.error(err);
           reset(form);
+          displayMessage('Oops! Something went wrong with your submission.');
         });
     }
 
@@ -66,6 +68,20 @@
       // ngMessages clearing errors workaround (https://github.com/angular/material/issues/1903).
       form.quote.$touched = false;
       form.company.$touched = false;
+    }
+
+    /**
+     * @name displayMessage
+     * @desc Shows a message.
+     * @param text The message to show.
+     */
+    function displayMessage (text) {
+      $mdToast.show(
+        $mdToast.simple()
+          .content(text)
+          .position('bottom right')
+          .hideDelay(3000)
+      );
     }
   }
 })();

@@ -6,8 +6,8 @@
   /**
    * The ManagerismController code.
    */
-  ManagerismController.$inject = ['$log', 'managerismFactory', '$http', 'authFactory'];
-  function ManagerismController ($log, managerismFactory, $http, authFactory) {
+  ManagerismController.$inject = ['$log', 'managerismFactory', '$http', 'authFactory', '$mdToast'];
+  function ManagerismController ($log, managerismFactory, $http, authFactory, $mdToast) {
     var vm = this;
 
     // Properties
@@ -44,8 +44,6 @@
      * @desc Gets a managerism from Firebase via the factory.
      */
     function getManagerism () {
-      displayMessage(false);
-
       managerismFactory.getManagerism().then(function (managerism) {
         vm.managerism = managerism;
       });
@@ -78,16 +76,16 @@
 
     /**
      * @name displayMessage
-     * @desc Shows a message (or hides it).
-     * @param text The message to show or false to hide.
+     * @desc Shows a message.
+     * @param text The message to show.
      */
     function displayMessage (text) {
-      if (text === false) {
-        vm.messageShow = false;
-      } else {
-        vm.messageText = text;
-        vm.messageShow = true;
-      }
+      $mdToast.show(
+        $mdToast.simple()
+          .content(text)
+          .position('bottom right')
+          .hideDelay(3000)
+      );
     }
   }
 })();
